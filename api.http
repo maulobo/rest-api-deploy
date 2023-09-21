@@ -1,0 +1,33 @@
+GET http://localhost:1234/movies
+
+###
+GET http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+###
+GET http://localhost:1234/movies?genre=action
+
+###
+GET http://localhost:1234/movies?rate=8.2
+
+### Crear una peli
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Christopher Nolan",
+  "duration": 175,
+  "poster": "https://i.ebayimg.com/images/g/yokAAOSw8w1YARbm/s-l1200.jpg",
+  "genre": ["Crime", "Drama"],
+  "rate": 9.0
+}
+
+### actualizar una peli
+
+PATCH  http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "year": 1998
+}
